@@ -22,3 +22,13 @@ code {
   margin:20px;
 }
 
+.shimmer-cards{
+  width:200px;
+  height:400px;
+  margin:20px;
+  background-color: rgb(216, 202, 202);
+}
+.shimmer-container{
+  display: flex;
+  flex-wrap: wrap;
+}
