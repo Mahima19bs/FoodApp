@@ -1,11 +1,12 @@
- const Shimmer=()=>{
+const Shimmer = ({ length }) => {
+  console.log("shimmer length",length);
   return (
-    <div className="shimmer-constants">
-        <div className="shimmer-cards"></div>
-        <div className="shimmer-cards"></div>
-        <div className="shimmer-cards"></div>
-
+    <div className="shimmer-container">
+      {Array.from({ length }).map((_, index) => (
+        <div key={index} className="shimmer-cards"></div>
+      ))}
     </div>
-  )
- }
- export default Shimmer;
+  );
+};
+
+export default Shimmer;

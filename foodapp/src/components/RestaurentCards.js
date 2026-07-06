@@ -1,9 +1,11 @@
 function RestaurantCards ({ restaurant }) {
+  console.log(restaurant.cloudinaryImageId);
+  const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/";
   return (
     <div className="res-card">
       <img
         className="rest-img"
-        src={restaurant.img}
+        src={CDN_URL + restaurant.cloudinaryImageId}
         alt={restaurant.name}
       />
 

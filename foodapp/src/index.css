@@ -32,3 +32,16 @@ code {
   display: flex;
   flex-wrap: wrap;
 }
+.search-button{
+   color: black;
+   background-color: rgb(135, 236, 236);
+   width:200px;
+   height: 50px;
+   border-radius: 5px;
+}
+.input-box{
+  border: 1px soid black;
+  box-shadow: 2px;
+  width:200px;
+  height:40px;
+}
