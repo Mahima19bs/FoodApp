@@ -3,6 +3,8 @@
   justify-content: space-between;
   margin: 10px;
   border: 1px solid black;
+  width:100%;
+  height:150px;
 }
 .logo-container{
   width:100px;
@@ -16,4 +18,35 @@
 .nav-items > ul >li{
   padding: 10px;
   margin:10px;
+}
+.res-card{
+  width:200px;
+  height:420px;
+  margin: 20px; 
+  background-color: rgb(242, 238, 238);
+}
+.res-card:hover{
+  width:200px;
+  height:420px;
+  border:1px solid black;
+  margin: 20px;
+  border:1px solid black;
+  cursor: pointer;
+  
+}
+.search{
+  padding: auto;
+}
+.rest-img{
+  width:100%;
+  height:200px;
+  align-items: center
+  ;
+}
+.res-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+.logo{
+  height:132px;
 }
