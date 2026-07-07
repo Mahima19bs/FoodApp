@@ -10,10 +10,10 @@ const Header = () => {
 
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/About">About Us</Link></li>
+          <li><Link to="/ContactUs">Contact Us</Link></li>
+          <li><Link to="/Cart">Cart</Link></li>
         </ul>
       </div>
 

@@ -2,6 +2,7 @@ function RestaurantCards ({ restaurant }) {
   console.log(restaurant.cloudinaryImageId);
   const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/";
   return (
+    <Link to="/restaurent/{restaurant.id}">
     <div className="res-card">
       <img
         className="rest-img"
@@ -19,6 +20,7 @@ function RestaurantCards ({ restaurant }) {
 
       <h4>⭐ {restaurant.avgRating}</h4>
     </div>
+    </Link>
   );
 };
 
