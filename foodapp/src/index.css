@@ -45,3 +45,8 @@ code {
   width:200px;
   height:40px;
 }
+.menu{
+  border:1px solid black;
+  width:250px;
+  height:auto;
+}

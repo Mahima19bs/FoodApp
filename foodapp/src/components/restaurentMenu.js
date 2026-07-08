@@ -1,31 +1,41 @@
-import {useState,useEffect} from 'react';
-import {useParams} from 'react-router-dom;'
-const RestaurentCards=()=>{
-    const {resId}=useParams();
-    const [apiData,setApiData]=useState([]);
-   useEffect(()=>{
-    const api=`https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.3850&lng=78.4867&restaurantId=${resId}`,
-    const json=api.json();
-    setApiData(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
-   },[])
-  return(
-   <div>
-    <h3>{apiData.name}</h3>
-    <h3>{apiData.areaName}</h3>
-    <h3>{apiData.costForTwo}</h3>
-    <h3>{apiData.avgRating}</h3>
-    <h3>{apiData.cuisines.join(", ")}</h3>
-    <h2>Recommendation menu</h2>
-    {
-        apiData.items.map((res,i)=>{
-            <div key={i}>
-            <h5>{res.name}</h5>
-            <h5>{res.img}</h5>
-            <h5>{res.cost}</h5>
-            </div>
-        })
-    }
-   </div>
-  )
-}
-export default RestaurentCards;
+import { useParams } from "react-router-dom";
+import useRestaurent from "./utils/useRestaurent";
+
+const RestaurentMenu = () => {
+  const { resId } = useParams();
+
+  const menuItems = useRestaurent(resId);
+
+  if (!menuItems) {
+    return <h2>Loading...</h2>;
+  }
+
+  return (
+    <div>
+      <h1>Restaurant Menu</h1>
+
+      <img
+        src={
+          "https://media-assets.swiggy.com/swiggy/image/upload/" +
+          menuItems.cloudinaryImageId
+        }
+        alt={menuItems.name}
+        width="200"
+      />
+
+      <h3>{menuItems.name}</h3>
+      <h3>{menuItems.costForTwo}</h3>
+      <h3>⭐ {menuItems.avgRating}</h3>
+      <h3>{menuItems.areaName}</h3>
+
+      <h3>Cuisines</h3>
+      <ul className="menu">
+        {menuItems.cuisines?.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default RestaurentMenu;

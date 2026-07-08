@@ -1,15 +1,16 @@
+import {Link} from 'react-router-dom';
 function RestaurantCards ({ restaurant }) {
-  console.log(restaurant.cloudinaryImageId);
   const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/";
   return (
-    <Link to="/restaurent/{restaurant.id}">
+    
     <div className="res-card">
+      <Link to={`/restaurent/${restaurant.id}`}>
       <img
         className="rest-img"
         src={CDN_URL + restaurant.cloudinaryImageId}
         alt={restaurant.name}
       />
-
+      </Link>
       <h3>{restaurant.name}</h3>
 
       <h4>{restaurant.areaName}</h4>
@@ -20,7 +21,6 @@ function RestaurantCards ({ restaurant }) {
 
       <h4>⭐ {restaurant.avgRating}</h4>
     </div>
-    </Link>
   );
 };
 
