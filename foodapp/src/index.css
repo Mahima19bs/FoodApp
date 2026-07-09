@@ -50,3 +50,16 @@ code {
   width:250px;
   height:auto;
 }
+.text-decorator{
+  text-decoration: underline;
+}
+.employee-contacts{
+  border: 1px solid black;
+  width:200px;
+  height:auto;
+  background-color: aliceblue;
+}
+.employee-details{
+  gap:10px;
+  margin:20px;
+}

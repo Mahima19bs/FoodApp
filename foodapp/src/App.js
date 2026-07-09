@@ -1,4 +1,5 @@
 import "./App.css";
+import employeeData from './components/utils/employeeData.js';
 import Header from "./components/Header";
 import Body from "./components/Body";
 import ContactUs from "./components/ContactUs";
@@ -27,7 +28,12 @@ export const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element:
+        <About emp={employeeData}/> 
+        // <>
+        // <About name={"firstName"}/>
+        // <About name={"SecondName"}/>
+        // </>
       },
       {
         path: "/contactUs",
